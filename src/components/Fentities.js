@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom'
 import '../styles/fentity-directory.css'
 
 class Fentities extends Component {
+
+    
+
     render() {
+        const fentitiesCategory = this.props.match.params.fentities
+        const fentities = this.props.state[fentitiesCategory]
+        
         return (
             <div>
-                <h1 id="fentities-title">{/*Get from `match`*/}</h1>
-                <div id="fentities-container">
+                <h1 id="fentities-title">{fentitiesCategory}</h1>
+
+              
+              {  <div id="fentities-container">
                     {fentities.map(f => {
                         return (
                             <div className="mini">
@@ -16,7 +24,7 @@ class Fentities extends Component {
                             </div>
                         )
                     })}
-                </div>
+                </div> }
             </div>)
     }
 }
